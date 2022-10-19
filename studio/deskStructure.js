@@ -1,5 +1,26 @@
 import S from '@sanity/desk-tool/structure-builder'
 import {createDeskHierarchy} from '@sanity/hierarchical-document-list'
+import React from 'react'
+
+const JsonPreview = ({document}) => (
+  <>
+    <h1>JSON Data for "{document.displayed.title}"</h1>
+
+    <pre>{JSON.stringify(document.displayed, null, 2)}</pre>
+
+  </>
+)
+
+export const getDefaultDocumentNode = ({ documentId, schemaType }) => {
+  // if (schemaType === "post" || documentId === "siteSettings") {
+      console.log({ documentId })
+
+      return S.document().views([
+          S.view.form(),
+          S.view.component(JsonPreview).title('JSON')
+      ])
+  // }
+}
 
 // We filter document types defined in structure to prevent
 // them from being listed twice
