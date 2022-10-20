@@ -26,6 +26,17 @@ export const getDefaultDocumentNode = ({ documentId, schemaType }) => {
 // them from being listed twice
 const hiddenDocTypes = (listItem) => !['page', 'route', 'site-config'].includes(listItem.getId())
 
+
+// Ideally, use the same configuration object you defined in your schemas:
+import {hierarchicalOptions} from './schemas/hierarchicalSchemas'
+
+// createDeskHierarchy({
+//   // Include whatever values you defined in your schema in the step above
+//   documentType: 'myCustomHierarchicalType', // the name of your document type
+//   fieldKeyInDocument: 'customTreeDataKey' // the name of the hierarchical field
+//   // ...
+// })
+
 export default () =>
   S.list()
     .title('Site')
@@ -54,5 +65,11 @@ export default () =>
 
         // ❓ Optional: limit the depth of your hierarachies
         maxDept: 3
-      })
+      }),
+      // createDeskHierarchy({
+      //     ...hierarchicalOptions,
+      //     documentType: 'myCustomHierarchicalType', // the name of your document type
+      //     fieldKeyInDocument: 'customTreeDataKey', // the name of the hierarchical field
+      //   ...
+      // })
     ])

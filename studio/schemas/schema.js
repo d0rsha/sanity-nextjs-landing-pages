@@ -23,6 +23,7 @@ import hero from './objects/hero';
 import imageSection from './objects/imageSection';
 import mailchimp from './objects/mailchimp';
 import textSection from './objects/textSection';
+import hierarchicalSchemas from './hierarchicalSchemas'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -44,5 +45,6 @@ export default createSchema({
     simplePortableText,
     siteConfig,
     textSection,
+    ...hierarchicalSchemas, // add all items in the array of hierarchical schemas
   ]),
 });
