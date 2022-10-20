@@ -2,7 +2,7 @@ import React from 'react';
 
 const HTMLpreview = ({ value }) => (
   // eslint-disable-next-line
-  <div dangerouslySetInnerHTML={{ __html: value.html }} />
+  <div dangerouslySetInnerHTML={{ __html: value.html }} tmp={console.log("studio/embededHtml.js:", value.html)} />
 );
 
 export default {

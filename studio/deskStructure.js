@@ -13,7 +13,7 @@ const JsonPreview = ({document}) => (
 
 export const getDefaultDocumentNode = ({ documentId, schemaType }) => {
   // if (schemaType === "post" || documentId === "siteSettings") {
-      console.log({ documentId })
+      console.log("getDefaultDocumentNode: ", { documentId })
 
       return S.document().views([
           S.view.form(),
