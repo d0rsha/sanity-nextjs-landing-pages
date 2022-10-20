@@ -4,8 +4,9 @@ import client from '../client'
 import '../styles/shared.module.css'
 import '../styles/layout.css'
 import '../styles/custom-properties.css'
+import groq from 'groq'
 
-const siteConfigQuery = `
+const siteConfigQuery = groq`
   *[_id == "global-config"] {
     ...,
     logo {asset->{extension, url}},

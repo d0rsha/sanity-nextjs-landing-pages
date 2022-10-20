@@ -9,9 +9,12 @@ import Cta from '../Cta'
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
 }
+const builder = imageUrlBuilder(client)
 
 function Hero(props) {
-  const {heading, backgroundImage, tagline, ctas} = props
+  const {heading, backgroundImage, tagline, ctas, asd} = props
+  console.log("Hero.js: ", props, asd)
+  const {alt = "", caption, asset} = backgroundImage
 
   const style = backgroundImage
     ? {
@@ -24,6 +27,22 @@ function Hero(props) {
       <div className={styles.content}>
         <h1 className={styles.title}>{heading}</h1>
         <div className={styles.tagline}>{tagline && <SimpleBlockContent blocks={tagline} />}</div>
+        
+        <img
+        src={builder.image(asset).auto('format').width(450).url()}
+        className={styles.image}
+        alt={alt}
+      />
+      {caption && (
+        <figcaption>
+          <div className={styles.caption}>
+            <div className={styles.captionBox}>
+              <p>{caption}</p>
+            </div>
+          </div>
+        </figcaption>
+      )}
+
         {ctas && (
           <div className={styles.ctas}>
             {ctas.map((cta) => (
@@ -40,7 +59,8 @@ Hero.propTypes = {
   heading: PropTypes.string,
   backgroundImage: PropTypes.object,
   tagline: PropTypes.array,
-  ctas: PropTypes.arrayOf(PropTypes.object),
+  ctas: PropTypes.arrayOf(PropTypes.object).isRequired,
+  asd: PropTypes.string.isRequired,
 }
 
 export default Hero

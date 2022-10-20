@@ -5,7 +5,9 @@ import styles from './Cta.module.css'
 
 function cta(props) {
   const {title, route, link} = props
+  console.log('Call To Action.js :', props)
 
+  // Return Local route before external link
   if (route && route.slug && route.slug.current) {
     return (
       <Link
@@ -20,6 +22,7 @@ function cta(props) {
     )
   }
 
+  // External link
   if (link) {
     return (
       <a className={styles.button} href={link}>

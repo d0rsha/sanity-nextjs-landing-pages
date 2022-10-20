@@ -1,11 +1,12 @@
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
+// Import everything from ./section as SectionComponents and access by SectionComponents[cta]
 import * as SectionComponents from './sections'
 import capitalizeString from '../utils/capitalizeString'
 
 function resolveSections(section) {
   // eslint-disable-next-line import/namespace
-  const Section = SectionComponents[capitalizeString(section._type)]
+  const Section = SectionComponents[capitalizeString(section._type)] // Capitalized first char of string
 
   if (Section) {
     return Section
@@ -17,6 +18,7 @@ function resolveSections(section) {
 
 function RenderSections(props) {
   const {sections} = props
+  console.log("RenderSections.js", sections)
 
   if (!sections) {
     console.error('Missing section')
@@ -26,11 +28,11 @@ function RenderSections(props) {
   return (
     <Fragment>
       {sections.map((section) => {
-        const SectionComponent = resolveSections(section)
-        if (!SectionComponent) {
+        const SectionComponentType = resolveSections(section)
+        if (!SectionComponentType) {
           return <div>Missing section {section._type}</div>
         }
-        return <SectionComponent {...section} key={section._key} />
+        return <SectionComponentType {...section} key={section._key} />
       })}
     </Fragment>
   )

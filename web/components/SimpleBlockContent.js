@@ -6,7 +6,8 @@ import Figure from './Figure'
 
 function SimpleBlockContent(props) {
   const {blocks} = props
-
+  console.log('SimpleBlockContent.js: ', blocks)
+  
   if (!blocks) {
     console.error('Missing blocks')
     return null

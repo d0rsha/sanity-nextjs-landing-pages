@@ -86,6 +86,7 @@ const LandingPage = (props) => {
     config = {},
     slug,
   } = props
+  console.log("[[...slug]].js LandingPage props:", props)
 
   const openGraphImages = openGraphImage
     ? [
