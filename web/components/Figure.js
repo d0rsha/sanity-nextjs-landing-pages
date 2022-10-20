@@ -6,8 +6,9 @@ import client from '../client'
 
 const builder = imageUrlBuilder(client)
 
-function Figure({node}) {
-  const {alt, caption, asset} = node
+function Figure(node) {
+  console.log("Figure.js: node", node.value);
+  const {alt = "", caption, asset} = node.value
   if (!asset) {
     return undefined
   }
