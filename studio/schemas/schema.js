@@ -8,6 +8,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import page from './documents/page';
 import route from './documents/route';
 import siteConfig from './documents/siteConfig';
+import post from './documents/post';
+import tag from './documents/tags/tag';
+import tags from './documents/tags/tags';
 
 // Object types
 import cta from './objects/cta';
@@ -17,6 +20,8 @@ import internalLink from './objects/internalLink';
 import link from './objects/link';
 import portableText from './objects/portableText';
 import simplePortableText from './objects/simplePortableText';
+import article from './objects/news-article/article';
+import oneTag from './objects/news-article/tag';
 
 // Landing page sections
 import hero from './objects/hero';
@@ -39,10 +44,15 @@ export default createSchema({
     link,
     mailchimp,
     page,
+    post,
     portableText,
     route,
     simplePortableText,
     siteConfig,
     textSection,
+    article,
+    tags,
+    tag,
+    oneTag,
   ]),
 });
