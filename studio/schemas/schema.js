@@ -10,7 +10,8 @@ import route from './documents/route';
 import siteConfig from './documents/siteConfig';
 import post from './documents/post';
 import tag from './documents/tags/tag';
-import tags from './documents/tags/tags';
+import tagCategory from './documents/tags/tagCategory';
+import news from './documents/articles/news';
 
 // Object types
 import cta from './objects/cta';
@@ -50,8 +51,11 @@ export default createSchema({
     simplePortableText,
     siteConfig,
     textSection,
+    // Nyhetsartiklar
+    news,
     article,
-    tags,
+    // Taggar
+    tagCategory,
     tag,
     oneTag,
   ]),

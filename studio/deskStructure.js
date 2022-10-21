@@ -33,7 +33,11 @@ export default () =>
       S.documentListItem().id('global-config').schemaType('site-config').title('Site config'),
       S.documentTypeListItem('page').title('Pages'),
       S.documentTypeListItem('route').title('Routes'),
+      S.divider(),
+
       ...S.documentTypeListItems().filter(hiddenDocTypes),
+
+      S.divider(),
 
       createDeskHierarchy({
         title: 'Main table of contents',

@@ -34,7 +34,14 @@ export default {
                          .slice(0, 200)
         },
         // validation: (Rule: { requiered: () => any }) => Rule.requiered(),
-    }
+    },
+    {
+      name: 'tags',
+      type: 'array',
+      title: 'Kategori(er)',
+      weak: true,
+      of: [{type: 'reference', to: { type: 'tagCategory'}}],
+    },
   ],
   preview: {
     select: {
